@@ -52,7 +52,7 @@
         						// var_dump($brands);
 
         						$j=1;
-        						foreach ($categories as $categorie) {
+        						foreach ($categories as $category) {
         							// var_dump($brands);     						
 
         					 ?>
@@ -61,12 +61,12 @@
         					 <tr>
         					 	
         					 	<td><?php echo $j++; ?></td>
-        					 	<td><?php echo $categorie['name']; ?></td>
+        					 	<td><?php echo $category['name']; ?></td>
         					 	
         					 	<td>
         					 		<a href="#" class="btn btn-outline-primary btn-sm">Detail</a>
         					 		<a href="#" class="btn btn-outline-warning btn-sm">Edit</a>
-        					 		<a href="#" class="btn btn-outline-danger btn-sm">Delete</a>
+        					 		<a href="categories_delete.php?id=<?php echo $category['id'] ?>" class="btn btn-outline-danger btn-sm">Delete</a>
         					 	</td>
         					 </tr>
 

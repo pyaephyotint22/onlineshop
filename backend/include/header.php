@@ -60,7 +60,21 @@
             <i class="fas fa-clipboard-list"></i>
             <span>Items List</span></a>
           </li>
-        
+          <li class="nav-item">
+          <a class="nav-link" href="brand_list.php">
+            <i class="fas fa-clipboard-list"></i>
+            <span>Brand List</span></a>
+          </li>
+        <li class="nav-item">
+          <a class="nav-link" href="subcategories_list.php">
+            <i class="fas fa-clipboard-list"></i>
+            <span>Subategories List</span></a>
+          </li>
+          <li class="nav-item">
+          <a class="nav-link" href="categories_list.php">
+            <i class="fas fa-clipboard-list"></i>
+            <span>Categories List</span></a>
+          </li>
 
         <!-- Divider -->
         <hr class="sidebar-divider">
