@@ -11,7 +11,7 @@
 	$stmt->execute();
 
 	if($stmt->rowCount()){
-		header("location:subcategory_list.php");
+		header("location:subcategories_list.php");
 	}else{
 		echo "Error";
 	}

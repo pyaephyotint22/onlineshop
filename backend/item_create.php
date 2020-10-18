@@ -1,16 +1,15 @@
 <?php 
+session_start();
+if (isset($_SESSION['loginuser']) && $_SESSION['loginuser']['role_name']=="Admin") {
 
 include 'include/header.php';
 include 'dbconnect.php';
 ?>
-
-
 	<!-- Page Heading -->
 	<div class="d-sm-flex align-items-center justify-content-between mb-4">
 		<h1 class="h3 mb-0 text-gray-800">Item Create</h1>
 		<a href="item_list.php" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-backward fa-sm text-white-50"></i> Go Back</a>
 	</div>
-
 	<div class="row">
 		<div class="offset-md-2 col-md-8">
 			<form action="additem.php" method="POST" enctype="multipart/form-data">
@@ -22,7 +21,6 @@ include 'dbconnect.php';
 					<label for="photo">Item Photo</label>
 					<input type="file" name="photo" id="photo" class="form-control-file" accept="image/*">
 				</div>
-
 				<ul class="nav nav-tabs" id="myTab" role="tablist">
 					<li class="nav-item" role="presentation">
 						<a class="nav-link active" id="home-tab" data-toggle="tab" href="#price" role="tab" aria-controls="home" aria-selected="true">Unit Price</a>
@@ -40,63 +38,52 @@ include 'dbconnect.php';
 					</div>
 					
 				</div>
-
 				<div class="form-group">
 					<label for="brand">Brand</label>
 					<select class="form-control" name="brand" id="brand">
-					<option>Choose....</option>
-					<?php 
-						$sql="SELECT * FROM brands";
-						$stmt=$pdo->prepare($sql);
-						$stmt->execute();
-						$brands=$stmt->fetchAll();
-						foreach ($brands as $brand) {
-							# code...
-						
-
-
-					 ?>
-					 <option value="<?php echo $brand['id']; ?>"><?php echo $brand['name']; ?></option>
-					 <?php } ?>
+						<option>Choose...</option>
+						<?php 
+							$sql="SELECT * FROM brands";
+							$stmt=$pdo->prepare($sql);
+							$stmt->execute();
+							$brands=$stmt->fetchAll();
+							foreach ($brands as $brand) {
+								
+						?>
+						<option value="<?php echo $brand['id']; ?>"><?php echo $brand['name']; ?></option>
+					<?php } ?>
 					</select>
 				</div>
-					<div class="form-group">
+				<div class="form-group">
 					<label for="subcategory">Subcategory</label>
-					<!-- <input type="number" name="subcategory" class="form-control" id="subcategory"> -->
 					<select class="form-control" name="subcategory">
-					<option>Choose....</option>
-					<?php 
-						$sql="SELECT * FROM subcategories";
-						$stmt=$pdo->prepare($sql);
-						$stmt->execute();
-						$subcategories=$stmt->fetchAll();
-						foreach ($subcategories as $subcategory) {
-							# code...
-						
-
-
-					 ?>
-					 <option value="<?php echo $subcategory['id']; ?>"><?php echo $subcategory['name']; ?></option>
-					 <?php }  ?>
+						<option>Choose....</option>
+						<?php 
+							$sql="SELECT * FROM subcategories";
+							$stmt=$pdo->prepare($sql);
+							$stmt->execute();
+							$subcategories=$stmt->fetchAll();
+							foreach ($subcategories as $subcategory) {
+								
+						?>
+						<option value="<?php echo $subcategory['id']; ?>"><?php echo $subcategory['name']; ?></option>
+					<?php } ?>
 					</select>
 				</div>
-
 				<div class="form-group">
 					<label for="description">Descritpion</label>
 					<textarea class="form-control" name="description" id="description"></textarea>
 				</div>
 				<input type="submit" class="btn btn-primary float-right" value="Save">
-
 			</form>
 		</div>
 	</div>
-
-
-
-
-
 <?php 
 
 include 'include/footer.php';
+
+}else{
+  header("location:../index.php");
+}
 
 ?>

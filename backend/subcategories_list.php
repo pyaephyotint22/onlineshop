@@ -1,6 +1,7 @@
   
 <?php 
-
+        session_start();
+if (isset($_SESSION['loginuser']) && $_SESSION['loginuser']['role_name']=="Admin") {
 	include 'include/header.php';
 	include 'dbconnect.php';
  ?>
@@ -27,7 +28,7 @@
         						<th>Subcategories Name</th>
         						
         					
-        						<th>Option</th>
+        						<th>Option</th>a3
         					</tr>
         				</thead>
         				<tfoot>
@@ -66,7 +67,7 @@
         					 
         					 	<td>
         					 		<a href="subcategories_detail.php?id=<?php echo $subcategory['id']; ?>" class="btn btn-outline-primary btn-sm">Detail</a>
-        					 		<a href="#" class="btn btn-outline-warning btn-sm">Edit</a>
+        					 		<a href="subcategories_edit.php?id=<?php echo $subcategory['id']; ?>" class="btn btn-outline-warning btn-sm">Edit</a>
         					 		<a href="subcategories_delete.php?id=<?php echo $subcategory['id']; ?>" class="btn btn-outline-danger btn-sm">Delete</a>
         					 	</td>
         					 </tr>
@@ -83,5 +84,10 @@
  <?php 
 
  include 'include/footer.php';
+    }else{
+  header("location:../index.php");
+}
+
+
 
   ?>

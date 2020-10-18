@@ -1,0 +1,294 @@
+/*Navigation*/
+.menu{
+    background-color: #f8f9fa;
+    box-shadow: 0 10px 20px rgba(0,0,0,.3);  
+  }
+
+.menu .navbar-nav .nav-item .nav-link {
+  padding: 0 1rem;
+  font-size: 1.2rem;
+}
+.menu .navbar-nav .nav-item .nav-link:hover {
+  color: blue;
+}
+.menu .navbar-nav .nav-item:last-child .nav-link {
+  padding-right: 0;
+}
+
+
+
+/*Carousel*/
+.container-carousel{
+	margin-top: 100px;
+
+}
+
+div.img-overlay{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.4);
+}
+
+/*Categories*/
+.wrapper:hover .fa-stack{
+    color: red;
+    transition: 0.9s;
+    transform: rotate(360deg);
+}
+
+/*Divider*/
+hr.divider {
+  max-width: 5.25rem;
+  border-width: 0.2rem;
+  border-color: #FF6E33;
+}
+
+hr.item-divider {
+  max-width: 5.25rem;
+  border-width: 0.1rem;
+  border-color: #FF6E33;
+}
+
+/*Items Hover*/
+.card_img {
+  position: relative;
+}
+
+.add_button {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  /*top: 50%;*/
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+/*.card_img:hover .image {
+  opacity: 0.3;
+}
+*/
+.card_img:hover .add_button {
+  opacity: 1;
+}
+
+.add_button:hover .fa-stack{
+    color: #FF6E33;
+    transition: 0.1s;
+    font-size: 1.5rem;
+}
+
+
+/*New Arrival*/
+.new_arrival{
+  cursor: pointer;
+}
+
+.product-list-icon{
+  transform: scaleX(0);
+  transition: 0.3s;
+}
+
+.new_arrival:hover .product-list-icon{
+  transform: scaleX(1);
+}
+
+.icon:hover{
+  color: #21ff00;
+}
+
+
+/*Contact in home page*/
+.contact{
+  background-image: url(images/bg.jpg);
+  position: relative;
+  z-index: 1;
+}
+.contact::before{
+  background: #000000;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: -1;
+  opacity: 0.7;
+}
+
+
+/*Item.html*/
+
+/*Jumbotrom*/
+
+.mt-90{
+  margin-top: 90px;
+}
+
+
+#count .p1[data-count]:after{
+  position:absolute;
+  right:10%;
+  top:8%;
+  content: attr(data-count);
+  font-size:70%;
+  padding:.2em;
+  border-radius:50%;
+  line-height:1em;
+  color: white;
+  background:rgba(255,0,0,.85);
+  text-align:center;
+  min-width: 1em;
+  font-weight:bold;
+}
+
+@media only screen and (min-width: 768px) {
+
+  #count{
+    font-size: 1.2rem;
+    margin-top: -0.5rem;
+  }
+
+}
+
+
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+hr.divider{
+  max-width: 5.25rem;
+  border-width: 0.2rem;
+  border-color: #ffc107;
+}
+hr.item-divider{
+  max-width: 5.25rem;
+  border-width: 0.1rem;
+  border-color: #ffc107;
+}
+
+.head{
+  font-family: "Work Sans", sans-serif;
+  font-weight: 600;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+
+/*Product*/
+.inner {
+  position: relative;
+}
+
+.image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.overlay {
+  position: absolute; 
+  bottom: 0; 
+  color: #f1f1f1; 
+  width: 100%;
+  transition: .5s ease;
+  opacity:0;
+  color: white;
+  font-size: 20px;
+  padding: 20px;
+  text-align: center;
+}
+
+.inner:hover .overlay {
+  opacity: 1;
+  transform: translateY(-30%);
+
+}
+ 
+.inner{
+    overflow: hidden;
+}
+ 
+.inner img{
+    transition: all 1.5s ease;
+}
+ 
+.inner:hover img{
+    transform: scale(1.1);
+}
+
+.border-radius{
+  border-radius: 30px;
+}
+
+.item-card-body{
+  padding-bottom: 0;
+}
+
+.item-bg{
+  border-top: 1px solid rgba(0,0,0,.125);
+  border-left: 1px solid rgba(0,0,0,.125);
+}
+
+.item-save:hover .fa-heart{
+  color: red;
+}
+
+.item-add:hover .fa-cart-plus{
+  color: #a67c02;
+}
+
+/*Contact in home page*/
+.about{
+  background-image: url(../images/bg.jpg);
+  position: relative;
+  z-index: 1;
+}
+.about::before{
+  background: #000000;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: -1;
+  opacity: 0.7;
+}
+
+
+.fa-stack{
+  opacity: 0.7;
+}
+
+/*Add to cart*/
+#count .p1[data-count]:after{
+  position:absolute;
+  right:10%;
+  top:8%;
+  content: attr(data-count);
+  font-size:70%;
+  padding:.2em;
+  border-radius:50%;
+  line-height:1em;
+  color: white;
+  background:rgba(255,0,0,.85);
+  text-align:center;
+  min-width: 1em;
+  font-weight:bold;
+}
+
+@media only screen and (min-width: 768px) {
+
+  #count{
+    font-size: 1.2rem;
+    margin-top: -0.5rem;
+  }
+
+}
+

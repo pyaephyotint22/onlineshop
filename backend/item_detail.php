@@ -1,10 +1,15 @@
 <?php 
 		
-
+		session_start();
+		if (isset($_SESSION['loginuser']) && $_SESSION['loginuser']['role_name']=="Admin") {
 		include 'include/header.php';
 		include 'dbconnect.php';
+
+		
 		$id=$_GET['id'];
 		$sql="SELECT items.*,brands.name as brand_name,subcategories.name as sub_name FROM items INNER JOIN brands ON items.brand_id=brands.id INNER JOIN subcategories ON items.subcategory_id=subcategories.id WHERE items.id=:item_id";
+		$sql="SELECT items.*,brands.name as brand_name,subcategories.name as sub_name,categories.name as c_name FROM items INNER JOIN brands ON items.brand_id=brands.id INNER JOIN subcategories ON items.subcategory_id=subcategories.id INNER JOIN categories ON subcategories.category_id=categories.id WHERE items.id=:item_id";
+
 		$stmt=$pdo->prepare($sql);
 		$stmt->bindParam(':item_id',$id);
 		$stmt->execute();
@@ -24,6 +29,7 @@
 			<h3>Item Name: <?php echo $item['name']; ?></h3>
 			<h3>Item Brand: <?php echo $item['brand_name']; ?></h3>
 			<h3>Item subcategory: <?php echo $item['sub_name']; ?></h3>
+			<h3>Item subcategory: <?php echo $item['c_name']; ?></h3>
 			<h3>
 				Item Price:
 				<?php 
@@ -44,5 +50,8 @@
 <?php 
 
 include 'include/footer.php';
+	}else{
+  header("location:../index.php");
+}
 
 ?>
